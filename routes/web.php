@@ -15,3 +15,10 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'users'], function () {
+    Route::get('/show', ['uses' => 'UserController@show']);
+    Route::post('/update', ['uses' => 'UserController@update']);
+});
