@@ -79,6 +79,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
