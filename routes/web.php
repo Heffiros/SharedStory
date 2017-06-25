@@ -22,3 +22,12 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/show', ['uses' => 'UserController@show']);
     Route::post('/update', ['uses' => 'UserController@update']);
 });
+
+Route::group(['prefix' => 'category'], function(){
+    Route::get('/', ['uses' => 'CategoryController@index']);
+    Route::get('/create', ['uses' => 'CategoryController@create']);
+    Route::post('/store', ['uses' => 'CategoryController@store']);
+    Route::post('/update', ['uses' => 'CategoryController@update']);
+    Route::get('/destroy/{category}', ['uses' => 'CategoryController@destroy']);
+    Route::get('/show/{category}', ['uses' => 'CategoryController@show']);
+});
