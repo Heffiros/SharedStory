@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container">
+
+        <div class="row">
         @foreach($category as $categ)
             <div class=" form-group row">
                 <div class="col-md-8">
@@ -15,9 +17,12 @@
                 </div>
             </div>
         @endforeach
+        </div>
 
-        <div class="row pull-right">
-            <a href="{{action('CategoryController@create')}}"><button class="btn btn-primary">{{trans('category.add')}}</button></a>
+        <div class="row">
+            <div>
+                <a  href="{{action('CategoryController@create')}}"><button class="col-xs-12 btn btn-primary">{{trans('category.add')}}</button></a>
+            </div>
         </div>
     </div>
 @endsection
