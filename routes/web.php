@@ -31,3 +31,13 @@ Route::group(['prefix' => 'category'], function(){
     Route::get('/destroy/{category}', ['uses' => 'CategoryController@destroy']);
     Route::get('/show/{category}', ['uses' => 'CategoryController@show']);
 });
+
+Route::group(['prefix' => 'story'], function(){
+    Route::get('/', ['uses' => 'StoryController@index']);
+    #de Route::get('/create', ['uses' => 'StoryController@create']);
+});
+
+Route::group(['prefix' => 'simple_story'], function(){
+    Route::get('/', ['uses' => 'SimpleStoryController@index']);
+    #de Route::get('/create', ['uses' => 'StoryController@create']);
+});
