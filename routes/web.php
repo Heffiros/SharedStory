@@ -39,5 +39,5 @@ Route::group(['prefix' => 'story'], function(){
 
 Route::group(['prefix' => 'simple_story'], function(){
     Route::get('/', ['uses' => 'SimpleStoryController@index']);
-    #de Route::get('/create', ['uses' => 'StoryController@create']);
+    Route::post('/store', ['uses' => 'SimpleStoryController@store']);
 });

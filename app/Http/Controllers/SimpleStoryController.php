@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Category;
 
 class SimpleStoryController extends Controller
 {
@@ -13,7 +14,8 @@ class SimpleStoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::get();
+        return view('simple-story.index')->withCategory($category);
     }
 
     /**
@@ -34,7 +36,9 @@ class SimpleStoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('simple-story.create')
+            ->withTitle($request->get('title'))
+            ->withCategory($request->get('category'));
     }
 
     /**
