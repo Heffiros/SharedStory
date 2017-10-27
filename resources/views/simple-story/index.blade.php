@@ -9,12 +9,13 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="storyTitle">{{trans('story.title')}}</label>
-                    <input type="text" class="form-control" id="storyTitle" name="title" placeholder="{{trans('story.title')}}">
+                    <input required type="text" class="form-control" id="storyTitle" name="title" placeholder="{{trans('story.title')}}">
                 </div>
 
                 <div class="form-group">
                     <label for="categSelector">{{trans('story.categorie')}}</label>
                     <select class="form-control" id="categSelector" name="category">
+                        <option value="NULL">{{trans('story.categ_default')}}</option>
                         @foreach($category as $categ)
                             <option value="{{$categ->id}}">{{$categ->name}}</option>
                         @endforeach

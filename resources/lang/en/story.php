@@ -6,5 +6,8 @@ return [
     'import_simple' => 'Import a new story',
     'title' => 'Title of your story',
     'begin' => 'Next',
-    'categorie' => 'Genre'
+    'categorie' => 'Genre',
+    'categ_default' => 'Pick A Genre',
+    'newPage' => 'Add a new Page',
+    'validate' => 'Submit all the story'
 ];

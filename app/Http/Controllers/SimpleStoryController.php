@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Category;
+use App\Model\SimpleStory;
+use App\Model\Story;
 
 class SimpleStoryController extends Controller
 {
@@ -36,9 +38,29 @@ class SimpleStoryController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        //Création de la Story
+        $story = new Story();
+        $story->user_id = $request->user()->id;
+        $story->location = 'fr';
+        $story->shared = false;
+
+        //Création de la simple Story
+        $newSimpleStory = new SimpleStory();
+        $newSimpleStory->title = $request->get('title');
+        $newSimpleStory->category_id = $request->get('category');
+        $newSimpleStory->content = '';
+        $newSimpleStory->save();
+
+        //Utilisation de la relation polymorphic pour dire que Story est une Simple Story
+        $newSimpleStory->story()->save($story);
+
+
+        //Voir s'il faut pas faire une redirection pour pas qu'il recrée une histoire en cas de ctr r
         return view('simple-story.create')
-            ->withTitle($request->get('title'))
-            ->withCategory($request->get('category'));
+            ->withStory($newSimpleStory->id);
+
     }
 
     /**

@@ -13,7 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sharedstory.css') }}" rel="stylesheet">
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 <body>
     <div id="app">
@@ -81,6 +83,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

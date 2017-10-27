@@ -2,14 +2,46 @@
 
 @section('content')
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{{action('SimpleStoryController@create')}}" method="post">
+                    {{ csrf_field() }}
 
-        <form>
-            <textarea name="editor1" id="editor1" rows="10" cols="80">
-                This is my textarea to be replaced with CKEditor.
-            </textarea>
-        </form>
+                    <input type="hidden" name="simpleStoryId" value="{{$story}}">
 
+                    <div class="form-group">
+                        <textarea name="editor" id="editor"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary pull-right">{{trans('story.validate')}}</button>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="newPage" type="button" class="btn btn-primary pull-right" style="margin-right: 10px">{{trans('story.newPage')}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-@endsection
 
-<script>tinymce.init({ selector:'textarea' });</script>
+
+    <script>
+        $( document ).ready(function() {
+
+
+
+            //Gestion du ckeditor
+            CKEDITOR.replace( 'editor', {
+                height: '700px'
+            } );
+
+
+
+
+
+
+
+        });
+    </script>
+@endsection
