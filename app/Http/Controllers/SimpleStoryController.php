@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\SimpleStoryPage;
 use Illuminate\Http\Request;
 use App\Model\Category;
 use App\Model\SimpleStory;
@@ -38,8 +39,6 @@ class SimpleStoryController extends Controller
      */
     public function store(Request $request)
     {
-
-
         //Création de la Story
         $story = new Story();
         $story->user_id = $request->user()->id;
@@ -74,9 +73,16 @@ class SimpleStoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(SimpleStory $id, Request $request)
     {
-        //
+        if ($request->has('page')){
+            $page = $id->pages->where('ordre', $request->get('page') + $request->get('next'))->first();
+            return view('simple-story.show')->withStory($id)->withPage($page);
+        }
+        else {
+            $page = $id->pages->where('ordre', 0)->first();
+            return view('simple-story.show')->withStory($id)->withPage($page);
+        }
     }
 
     /**

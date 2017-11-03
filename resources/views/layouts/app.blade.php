@@ -16,6 +16,7 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+    <script src="https://use.fontawesome.com/50fe6b6f93.js"></script>
 </head>
 <body>
     <div id="app">

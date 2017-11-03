@@ -10,3 +10,16 @@
 .menu_story_simple {
     margin-top: 40%;
 }
+
+#arrowLeft {
+    margin-top:40%;
+}
+
+#arrowRight {
+    margin-top:40%;
+}
+
+#page {
+    height : 900px;
+    background-color: white;
+}
