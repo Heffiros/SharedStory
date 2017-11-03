@@ -28,20 +28,21 @@
 
     <script>
         $( document ).ready(function() {
-
-
-
             //Gestion du ckeditor
             CKEDITOR.replace( 'editor', {
                 height: '700px'
             } );
 
 
-
-
-
+            $('#newPage').click(function()  {
+                alert('toto')
+            })
 
 
         });
+
+
+
+
     </script>
 @endsection

@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="categSelector">{{trans('story.categorie')}}</label>
                     <select class="form-control" id="categSelector" name="category">
-                        <option value="NULL">{{trans('story.categ_default')}}</option>
+                        <!-- <option value="NULL">{{trans('story.categ_default')}}</option> -->
                         @foreach($category as $categ)
                             <option value="{{$categ->id}}">{{$categ->name}}</option>
                         @endforeach

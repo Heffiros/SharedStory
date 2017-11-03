@@ -49,7 +49,12 @@ class SimpleStoryController extends Controller
         //Création de la simple Story
         $newSimpleStory = new SimpleStory();
         $newSimpleStory->title = $request->get('title');
-        $newSimpleStory->category_id = $request->get('category');
+
+        if($request->get('category') != NULL)
+            $newSimpleStory->category_id = $request->get('category');
+        else
+            $newSimpleStory->category_id = '';
+
         $newSimpleStory->save();
 
         //Utilisation de la relation polymorphic pour dire que Story est une Simple Story
@@ -57,9 +62,10 @@ class SimpleStoryController extends Controller
 
 
         //Voir s'il faut pas faire une redirection pour pas qu'il recrée une histoire en cas de ctr r
-        return view('simple-story.create')
-            ->withStory($newSimpleStory->id);
 
+        return redirect()->action(
+            'SimpleStoryPageController@index', ['story' => $newSimpleStory->id]
+        );
     }
 
     /**
