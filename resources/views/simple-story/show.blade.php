@@ -3,9 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @if($page->ordre != 0)
             <div id='arrowLeft' class=" col-sm-1 col-md-1">
                 <i class="fa fa-arrow-circle-left fa-5x" aria-hidden="true"></i>
             </div>
+            @endif
 
             <div id='page' class="col-sm-10 col-md-10">
                 {!! $page->content !!}
