@@ -41,8 +41,13 @@ class SimpleStoryPageController extends Controller
             return view('simple-story.create')
                 ->withStory($request->get('simpleStoryId'));
         else
-            dd('Enrengistrement total');
+            return redirect()->action(
+                'SimpleStoryPageController@validation'
+            );
+    }
 
-
+    public function validation()
+    {
+        return view('simple-story.validation');
     }
 }
