@@ -15,15 +15,15 @@ class CreateSimpleStoryPagesTable extends Migration
     {
         Schema::create('simple_story_page', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('story_id')->unsigned();
+            $table->integer('simple_story_id')->unsigned();
             $table->longText('content');
-            $table->integer('previous_page');
+            $table->integer('ordre');
             $table->timestamps();
         });
 
 
         Schema::table('simple_story_page', function (Blueprint $table) {
-            $table->foreign('story_id')->references('id')->on('simple_story');
+            $table->foreign('simple_story_id')->references('id')->on('simple_story');
         });
 
     }

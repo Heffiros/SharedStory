@@ -15,4 +15,9 @@ class SimpleStory extends Model
     {
         return $this->morphMany('App\Model\Story', 'storyable');
     }
+
+    public function pages()
+    {
+        return $this->hasMany('App\Model\SimpleStoryPage');
+    }
 }

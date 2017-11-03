@@ -9,5 +9,5 @@ class SimpleStoryPage extends Model
     protected $table = 'simple_story_page';
     public $timestamps = false;
 
-    protected $fillable = ['content'];
+    protected $fillable = ['content', 'ordre'];
 }

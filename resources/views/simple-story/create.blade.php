@@ -4,21 +4,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{action('SimpleStoryController@create')}}" method="post">
+                <form action="{{action('SimpleStoryPageController@create')}}" method="post">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="simpleStoryId" value="{{$story}}">
-
+                    <input id='validation' type="hidden" name="validation" value="" >
                     <div class="form-group">
                         <textarea name="editor" id="editor"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary pull-right">{{trans('story.validate')}}</button>
+                        <button id='endPage' type="submit" class="btn btn-primary pull-right">{{trans('story.validate')}}</button>
                     </div>
 
                     <div class="form-group">
-                        <button id="newPage" type="button" class="btn btn-primary pull-right" style="margin-right: 10px">{{trans('story.newPage')}}</button>
+                        <button id="newPage"  class="btn btn-primary pull-right" style="margin-right: 10px">{{trans('story.newPage')}}</button>
                     </div>
                 </form>
             </div>
@@ -35,9 +35,12 @@
 
 
             $('#newPage').click(function()  {
-                alert('toto')
+                $('#validation').val(1);
             })
 
+            $('#endPage').click(function()  {
+                $('#validation').val(0);
+            })
 
         });
 
