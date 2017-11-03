@@ -16,7 +16,6 @@ class CreateSimpleStoryTable extends Migration
         Schema::create('simple_story', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->longText('content');
             $table->integer('category_id')->unsigned();
             $table->timestamps();
         });

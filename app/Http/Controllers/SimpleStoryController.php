@@ -50,7 +50,6 @@ class SimpleStoryController extends Controller
         $newSimpleStory = new SimpleStory();
         $newSimpleStory->title = $request->get('title');
         $newSimpleStory->category_id = $request->get('category');
-        $newSimpleStory->content = '';
         $newSimpleStory->save();
 
         //Utilisation de la relation polymorphic pour dire que Story est une Simple Story
