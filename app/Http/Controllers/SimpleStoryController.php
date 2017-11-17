@@ -77,11 +77,10 @@ class SimpleStoryController extends Controller
     {
         if ($request->has('page')){
             $page = $id->pages->where('ordre', $request->get('page') + $request->get('next'))->first();
-            return view('simple-story.show')->withStory($id)->withPage($page);
-        }
-        else {
+            return view('simple-story.show')->withStory($id)->withPage($page)->withEnd($page->isLastPage());
+        } else {
             $page = $id->pages->where('ordre', 0)->first();
-            return view('simple-story.show')->withStory($id)->withPage($page);
+            return view('simple-story.show')->withStory($id)->withPage($page)->withEnd($page->isLastPage());
         }
     }
 
