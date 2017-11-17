@@ -13,7 +13,7 @@
                         <img src="https://s-media-cache-ak0.pinimg.com/originals/3c/38/6d/3c386d203759319b508d9140440fb1c3.jpg" alt="...">
                         <div class="caption">
                                 <h3>{{$oneStory->storyable->title}}</h3>
-                                <a href="" type="button" class="btn btn-success">{{trans("message.continue-write")}}</a>
+                                <a href="{{action('SimpleStoryPageController@liste', ['id' => $oneStory->storyable->id])}}" type="button" class="btn btn-success">{{trans("message.continue-write")}}</a>
                                 <a href="{{action('SimpleStoryController@show', ['id' => $oneStory->storyable->id])}}" type="button" class="btn btn-primary pull-right"><i class="fa fa-book" aria-hidden="true"></i></a>
                         </div>
                     </div>
