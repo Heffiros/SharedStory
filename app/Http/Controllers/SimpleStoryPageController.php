@@ -55,4 +55,9 @@ class SimpleStoryPageController extends Controller
     {
         return view('simple-story.validation');
     }
+
+    public function liste(SimpleStory $id, Request $request)
+    {
+        return view('simple-story.liste')->withPages($id->pages);
+    }
 }
