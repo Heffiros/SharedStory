@@ -32,7 +32,7 @@
                             <li>
                                 <a href="#">
                                     <i class="fa fa-book" aria-hidden="true"></i>
-                                    Ma Bibliothère </a>
+                                    Ma Bibliothèque </a>
                             </li>
                             <li>
                                 <a href="#" target="_blank">
