@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $lastSimpleStory = Story::where('storyable_type', 'App\Model\SimpleStory')->orderByDesc('updated_at')->limit(3)->get();
-        return view('home')->withStory($lastSimpleStory);
+        return view('new_home')->withStory($lastSimpleStory);
     }
 }
