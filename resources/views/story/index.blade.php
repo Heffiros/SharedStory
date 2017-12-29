@@ -16,7 +16,7 @@
 
 
             <div class="col-md-6 menu_story_simple">
-                <a href="" role="button" class="btn btn-primary pull-right">Importer une histoire</a>
+                <a href="" role="button" class="btn btn-primary pull-right">{{trans('story.import')}}</a>
             </div>
         </div>
 

@@ -7,4 +7,5 @@ return [
     'chat' => 'Chat',
     'story' => 'My last stories',
     'continue-write' => 'Continue to write',
+    'import' => 'Importa story'
 ];

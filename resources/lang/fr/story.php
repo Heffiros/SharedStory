@@ -10,4 +10,5 @@ return [
     'categ_default' => "Choississez une catégorie",
     'newPage' => 'Ajouter une nouvelle page',
     'validate' => 'Enregistrer tout le récit',
+    'import' => 'Import une histoire',
 ];
