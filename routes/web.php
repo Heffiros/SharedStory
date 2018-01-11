@@ -52,5 +52,5 @@ Route::group(['prefix' => 'pages'], function(){
 });
 
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('/', ['uses' => 'AdminController@index']);
+    Route::get('/', ['uses' => 'AdminController@index'])->middleware('isAdmin');
 });
