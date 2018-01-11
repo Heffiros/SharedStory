@@ -44,6 +44,13 @@
                                     <i class="fa fa-weixin" aria-hidden="true"></i>
                                     {{trans('home.chat')}} </a>
                             </li>
+                            @if (Auth::user()->role == 2)
+                                <li>
+                                    <a href="{{action("AdminController@index")}}">
+                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                        {{trans('home.admin')}} </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <!-- END MENU -->

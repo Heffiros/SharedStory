@@ -50,3 +50,7 @@ Route::group(['prefix' => 'pages'], function(){
     Route::get('/validation', ['uses' => 'SimpleStoryPageController@validation']);
     Route::get('/list/{id}', ['uses' => 'SimpleStoryPageController@liste']);
 });
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', ['uses' => 'AdminController@index']);
+});
