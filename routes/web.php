@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'users'], function () {
     Route::get('/show', ['uses' => 'UserController@show']);
     Route::post('/update', ['uses' => 'UserController@update']);
+    Route::get('/role/{user}', ['uses' => 'UserController@changeRole'])->middleware('isAdmin');
 });
 
 Route::group(['prefix' => 'category'], function(){
