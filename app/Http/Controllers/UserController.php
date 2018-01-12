@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 
 use Hash;
+use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
@@ -22,8 +23,10 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
+        //dd(Input::file('avatar'));
         $user = User::where('id', $request->user()->id)->first();
         $user->email = $request->get('email');
+        $user->avatar = Input::file('avatar');
         if ($request->has('password'))
             $user->password = Hash::make($request->get('password'));
         $user->name = $request->get('firstname');

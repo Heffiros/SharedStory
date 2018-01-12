@@ -5,4 +5,5 @@ return [
     'password' => 'New password',
     'name' => 'Full name',
     'submit' => 'Submit',
+    'avatar' => 'Avatar'
 ];

@@ -7,7 +7,7 @@
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img src="http://facetheforce.today/yoda" class="img-responsive" alt="">
+                        <img src="{{Auth::user()->avatar->url('thumb')}}" class="img-responsive" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->

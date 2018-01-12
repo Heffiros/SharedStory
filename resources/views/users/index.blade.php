@@ -2,7 +2,13 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ action('UserController@update') }}" method="post">
+        <div class="row">
+            <div class="profile-userpic-update">
+                <img src="{{Auth::user()->avatar->url('medium')}}" class="img-responsive" alt="">
+            </div>
+        </div>
+
+        <form action="{{ action('UserController@update') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <div class="form-group">
@@ -22,6 +28,13 @@
                 <div class="form-group">
                     <label for="name">{{trans('user.name')}}</label>
                     <input type="text" class="form-control" id="name"  name="firstname" value="{{$users->name}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="avatar">{{trans('user.avatar')}}</label>
+                    <input type="file" class="form-control-file" id="avatar"  name="avatar">
                 </div>
             </div>
 
