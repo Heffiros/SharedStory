@@ -30,4 +30,10 @@ class UserController extends Controller
         $user->save();
         return redirect()->back();
     }
+
+    public function changeRole(User $user, Request $request)
+    {
+        $user->role = $request->get('role');
+        $user->save();
+    }
 }
