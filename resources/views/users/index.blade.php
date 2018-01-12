@@ -32,11 +32,28 @@
             </div>
 
             <div class="form-group">
+                <label for="gender">{{trans('user.avatar')}}</label>
+                <select name="gender" id="gender" class="form-control">
+                    <option value="Homme" @if ($users->gender == "Homme") selected @endif>{{trans('user.man')}}</option>
+                    <option value="Femme" @if ($users->gender == "Femme") selected @endif>{{trans('user.woman')}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="inputLastname">{{trans('user.lastname')}}</label>
+                    <input type="text" class="form-control" id="inputLastname"  name="lastname" value="{{$users->lastname}}">
+                </div>
+            </div>
+
+            <div class="form-group">
                 <div class="form-group">
                     <label for="avatar">{{trans('user.avatar')}}</label>
                     <input type="file" class="form-control-file" id="avatar"  name="avatar">
                 </div>
             </div>
+
+
 
             <div class="pull-right">
                 <button type="submit" class="btn btn-primary">{{trans('user.submit')}}</button>

@@ -26,10 +26,14 @@ class UserController extends Controller
         //dd(Input::file('avatar'));
         $user = User::where('id', $request->user()->id)->first();
         $user->email = $request->get('email');
-        $user->avatar = Input::file('avatar');
+        //Stapler get image
+        if (Input::file('avatar') != NULL)
+            $user->avatar = Input::file('avatar');
         if ($request->has('password'))
             $user->password = Hash::make($request->get('password'));
+        $user->lastname = $request->get('lastname');
         $user->name = $request->get('firstname');
+        $user->gender = $request->get('gender');
         $user->save();
         return redirect()->back();
     }

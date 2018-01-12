@@ -28,7 +28,7 @@ class User extends Authenticatable implements StaplerableInterface
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar'
+        'name', 'email', 'password', 'avatar', 'lastname', 'gender'
     ];
 
     /**

@@ -5,5 +5,8 @@ return [
     'password' => 'Nouveau mot de passe',
     'name' => 'Nom complet',
     'submit' => 'Envoyer',
-    'avatar' => 'Avatar'
+    'avatar' => 'Avatar',
+    'lastname' => 'Nom de famille',
+    'man' => 'Homme',
+    'woman' => 'Femme',
 ];
