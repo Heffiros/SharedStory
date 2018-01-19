@@ -55,3 +55,7 @@ Route::group(['prefix' => 'pages'], function(){
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', ['uses' => 'AdminController@index'])->middleware('isAdmin');
 });
+
+Route::group(['prefix' => 'titre'], function (){
+    Route::get('/', ['uses' => 'TitreController@index'])->middleware('isAdmin');
+});
