@@ -8,6 +8,7 @@ use App\Model\Category;
 use App\Model\SimpleStory;
 use App\Model\Story;
 
+use Illuminate\Support\Facades\Input;
 class SimpleStoryController extends Controller
 {
 
@@ -58,6 +59,8 @@ class SimpleStoryController extends Controller
             $newSimpleStory->category_id = $request->get('category');
         else
             $newSimpleStory->category_id = '';
+        if (Input::file('photo') != NULL)
+            $newSimpleStory->photo = Input::file('photo');
 
         $newSimpleStory->save();
 

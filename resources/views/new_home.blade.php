@@ -62,8 +62,12 @@
                     @foreach($story as $oneStory)
                         <div class="col-sm-4 col-md-4 col-lg-4">
                             <div class="thumbnail">
-                                <!-- TODO : Faire marcher stapler pour ajouter une photo aux récit -->
-                                <img src="http://facetheforce.today/darthvader" alt="...">
+                                @if ($oneStory->storyable->photo->url('medium') == "/photos/medium/missing.png")
+                                    <img src="http://facetheforce.today/darthvader" alt="...">
+                                @else
+                                    <img src="{{$oneStory->storyable->photo->url('medium')}}" >
+                                @endif
+
                                 <div class="caption">
                                     <h3>{{$oneStory->storyable->title}}</h3>
                                     <a href="{{action('SimpleStoryPageController@liste', ['id' => $oneStory->storyable->id])}}" type="button" class="btn btn-success">{{trans("home.continue-write")}}</a>
