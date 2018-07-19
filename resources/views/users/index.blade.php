@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <label for="gender">{{trans('user.avatar')}}</label>
+                <label for="gender">{{trans('auth.sexe')}}</label>
                 <select name="gender" id="gender" class="form-control">
                     <option value="Homme" @if ($users->gender == "Homme") selected @endif>{{trans('user.man')}}</option>
                     <option value="Femme" @if ($users->gender == "Femme") selected @endif>{{trans('user.woman')}}</option>

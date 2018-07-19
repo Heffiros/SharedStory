@@ -16,6 +16,8 @@ return [
     'failed'   => 'Ces identifiants ne correspondent pas à nos enregistrements',
     'throttle' => 'Trop de tentatives de connexion. Veuillez essayer de nouveau dans :seconds secondes.',
     'email' => 'Adresse Email',
+    'sexe' => 'Sexe',
+    'lastname' => 'Nom de famille',
     'password' => 'Mot de passe',
     'login' => 'Se Connecter',
     'remember' => 'Se souvenir de moi',
