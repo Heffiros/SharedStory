@@ -22,7 +22,11 @@ class CreateTableUserTitre extends Migration
 
 
         Schema::table('user_title', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('titre');
+            $table->foreign('titre_id')->references('id')->on('titre');
+        });
+
+        Schema::table('user_title', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

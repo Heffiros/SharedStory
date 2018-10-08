@@ -39,4 +39,14 @@ class User extends Authenticatable implements StaplerableInterface
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function titres()
+    {
+        return $this->hasMany('App\Model\UserTitre','user_id','id');
+    }
+
+    public function getActualTitre()
+    {
+        return $this->hasOne('App\Model\UserTitre','user_id','id')->latest();
+    }
 }
