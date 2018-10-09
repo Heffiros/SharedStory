@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Model\UserTitre;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -62,12 +63,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'lastname' => $data['lastname'],
             'gender' => $data['sexe'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $user_titre = new UserTitre();
+        $user_titre->user_id = $user->id;
+        $user_titre->titre_id = 1;
+        $user_titre->save();
+        return $user;
     }
 }

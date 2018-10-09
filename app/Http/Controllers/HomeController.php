@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Story;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,12 @@ class HomeController extends Controller
     public function index()
     {
         $lastSimpleStory = Story::where('storyable_type', 'App\Model\SimpleStory')->orderByDesc('updated_at')->limit(3)->get();
-        return view('new_home')->withStory($lastSimpleStory);
+        $user = Auth::user();
+
+        $titres = $user->titres();
+        $last_titre = $titres->get()->last();
+
+        $last_titre = $last_titre->titre()->first()->name;
+        return view('new_home')->withStory($lastSimpleStory)->withLast($last_titre);
     }
 }

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Model\SimpleStoryPage;
+use App\Model\UserTitre;
 use Illuminate\Http\Request;
 use App\Model\Category;
 use App\Model\SimpleStory;
 use App\Model\Story;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 class SimpleStoryController extends Controller
 {
@@ -69,7 +71,13 @@ class SimpleStoryController extends Controller
 
 
         //Voir s'il faut pas faire une redirection pour pas qu'il recrée une histoire en cas de ctr r
-
+        $user_tire = new UserTitre();
+        if ($user_tire->haveAlreadyTitle(Auth::user()->id, 2) == 0)
+        {
+            $user_tire->user_id = Auth::user()->id;
+            $user_tire->titre_id = 2;
+            $user_tire->save();
+        }
         return redirect()->action(
             'SimpleStoryPageController@index', ['story' => $newSimpleStory->id]
         );

@@ -16,7 +16,7 @@
                             {{ Auth::user()->name }} <br> {{ Auth::user()->email }}
                         </div>
                         <div class="profile-usertitle-job">
-                            Developer <!-- TODO : Quand j'aurais mis en place le système de titre le rajouter ici -->
+                            {{ $last }}
                         </div>
                     </div>
 
