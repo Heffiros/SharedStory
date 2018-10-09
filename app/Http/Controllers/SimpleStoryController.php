@@ -64,10 +64,10 @@ class SimpleStoryController extends Controller
         if (Input::file('photo') != NULL)
             $newSimpleStory->photo = Input::file('photo');
 
-        //$newSimpleStory->save();
+        $newSimpleStory->save();
 
         //Utilisation de la relation polymorphic pour dire que Story est une Simple Story
-        //$newSimpleStory->story()->save($story);
+        $newSimpleStory->story()->save($story);
 
 
         //Voir s'il faut pas faire une redirection pour pas qu'il recrée une histoire en cas de ctr r
