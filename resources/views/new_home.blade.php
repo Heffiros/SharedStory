@@ -30,12 +30,12 @@
                                     {{trans('home.home')}} </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{action("LibraryController@index")}}">
                                     <i class="fa fa-book" aria-hidden="true"></i>
                                     {{trans('home.library')}} </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{action("GroupsController@index")}}">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     {{trans('home.groups')}} </a>
                             </li>
