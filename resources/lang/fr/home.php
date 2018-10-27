@@ -7,5 +7,6 @@ return [
     'chat' => 'Discussion',
     'story' => 'Mes derniers récits',
     'continue-write' => "Reprendre l'écriture",
-    'admin' => 'Panel Admin'
+    'admin' => 'Panel Admin',
+    'empty' => "Vous n'avez pas encore de récit"
 ];

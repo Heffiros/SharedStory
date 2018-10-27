@@ -8,5 +8,6 @@ return [
     'story' => 'My last stories',
     'continue-write' => 'Continue to write',
     'import' => 'Importa story',
-    'admin' => 'Admin'
+    'admin' => 'Admin',
+    'empty' => "You don't have story yet"
 ];

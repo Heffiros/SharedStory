@@ -56,9 +56,12 @@
                     <!-- END MENU -->
                 </div>
             </div>
+
             <div class="col-md-9">
+                @if(count($story))
                 <div class="profile-content">
                     <h1>{{trans('home.story')}}</h1>
+
                     @foreach($story as $oneStory)
                         <div class="col-sm-4 col-md-4 col-lg-4">
                             <div class="thumbnail">
@@ -77,6 +80,12 @@
                         </div>
                     @endforeach
                 </div>
+                @else
+                    <div class="profile-content-little">
+                        <h1>{{trans('home.story')}}</h1>
+                        {{trans('home.empty')}}
+                    </div>
+                @endif
             </div>
         </div>
     </div>
