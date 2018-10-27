@@ -23,9 +23,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $lastSimpleStory = Story::where('storyable_type', 'App\Model\SimpleStory')->orderByDesc('updated_at')->limit(3)->get();
+        //dd($request->user()->id);
+        $lastSimpleStory = Story::where('storyable_type', 'App\Model\SimpleStory')->where('user_id', $request->user()->id)->orderByDesc('updated_at')->limit(3)->get();
         $user = Auth::user();
 
         $titres = $user->titres();

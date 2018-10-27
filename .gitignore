@@ -1,2 +1,11 @@
 vendor
 .env
+public
+.idea
+composer.lock
+node_modules
+public/css
+
+*.lock
+
+package-lock\.json

@@ -30,12 +30,12 @@
                                     {{trans('home.home')}} </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{action("LibraryController@index")}}">
                                     <i class="fa fa-book" aria-hidden="true"></i>
                                     {{trans('home.library')}} </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{action("GroupsController@index")}}">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     {{trans('home.groups')}} </a>
                             </li>
@@ -56,9 +56,12 @@
                     <!-- END MENU -->
                 </div>
             </div>
+
             <div class="col-md-9">
+                @if(count($story))
                 <div class="profile-content">
                     <h1>{{trans('home.story')}}</h1>
+
                     @foreach($story as $oneStory)
                         <div class="col-sm-4 col-md-4 col-lg-4">
                             <div class="thumbnail">
@@ -77,6 +80,12 @@
                         </div>
                     @endforeach
                 </div>
+                @else
+                    <div class="profile-content-little">
+                        <h1>{{trans('home.story')}}</h1>
+                        {{trans('home.empty')}}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

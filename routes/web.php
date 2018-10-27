@@ -52,6 +52,15 @@ Route::group(['prefix' => 'pages'], function(){
     Route::get('/list/{id}', ['uses' => 'SimpleStoryPageController@liste']);
 });
 
+Route::group(['prefix' => 'library'], function(){
+    Route::get('/', ['uses' => 'LibraryController@index']);
+});
+
+Route::group(['prefix' => 'groups'], function(){
+    Route::get('/', ['uses' => 'GroupsController@index']);
+});
+
+
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', ['uses' => 'AdminController@index'])->middleware('isAdmin');
 });
